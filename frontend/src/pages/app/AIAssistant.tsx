@@ -1,13 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, Send, User, Loader2 } from 'lucide-react';
-
-// const API_KEY = "[REVOKED_GOOGLE_API_KEY]";
-// const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
-
-const API_KEY = "[REVOKED_GOOGLE_API_KEY]";
-
-const API_URL =
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+import { api } from '@/lib/api';
 
 interface Message {
   id: string;
@@ -50,34 +43,12 @@ export default function AIAssistant() {
     setIsLoading(true);
 
     try {
-      // Build history for Gemini
       const history = messages.map(msg => ({
-        role: msg.role === 'model' ? 'model' : 'user',
-        parts: [{ text: msg.content }]
+        role: msg.role === 'model' ? 'assistant' as const : 'user' as const,
+        content: msg.content,
       }));
-
-      history.push({
-        role: 'user',
-        parts: [{ text: userMessage.content }]
-      });
-
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          contents: history
-        })
-      });
-
-      const data = await response.json();
-
-      if (data.error) {
-        throw new Error(data.error.message);
-      }
-
-      const modelResponseText = data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't process that.";
+      const response = await api.ai.chat(userMessage.content, history);
+      const modelResponseText = response.reply || "I'm sorry, I couldn't process that.";
 
       const modelMessage: Message = {
         id: (Date.now() + 1).toString(),
