@@ -10,6 +10,21 @@ AgriSmart is a full-stack platform for managing farms and crops, viewing market 
 - Weather forecasts, AI-assisted crop guidance, and image-based disease analysis when their providers are configured.
 - Progressive web app support with English and Urdu localization.
 
+## Product preview
+
+<p align="center">
+  <img src="docs/media/home.png" alt="AgriSmart landing page with the mobile dashboard preview" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/media/features.png" alt="AgriSmart feature overview" width="49%" />
+  <img src="docs/media/marketplace.png" alt="AgriSmart marketplace with live market prices" width="49%" />
+</p>
+
+## Walkthrough
+
+Watch the [66-second product walkthrough](docs/media/agrismart-demo.webm), captured from the local application. It demonstrates the landing experience, feature overview, live AMIS-backed market prices, and the secure sign-in entry point.
+
 ## Architecture
 
 ```text

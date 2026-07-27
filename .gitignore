@@ -17,6 +17,9 @@ backend/env
 **/*.log
 backend/uploads/
 
+# Local browser-automation artifacts
+output/
+
 # Editor and operating-system files
 .DS_Store
 .idea/
