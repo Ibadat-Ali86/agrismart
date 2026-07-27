@@ -1,0 +1,10 @@
+# Store text files with LF line endings for consistent cross-platform diffs.
+* text=auto eol=lf
+
+# Keep binary assets byte-for-byte.
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.woff binary
+*.woff2 binary

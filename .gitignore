@@ -1,0 +1,24 @@
+# Dependencies
+**/node_modules/
+
+# Environment files and local credentials
+**/.env
+**/.env.*
+!**/.env.example
+backend/env
+
+# Build output and coverage
+**/dist/
+**/dist-ssr/
+**/coverage/
+**/.vite/
+
+# Runtime files
+**/*.log
+backend/uploads/
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,43 @@
+{
+  "name": "agrismart-backend",
+  "version": "1.0.0",
+  "description": "AgriSmart REST API — Express + PostgreSQL (Neon) with real OTP email auth.",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "db:migrate": "node src/db/migrate.js",
+    "db:seed": "node src/db/seed.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "axios": "^1.17.0",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.2.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.1.1",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^6.9.14",
+    "pg": "^8.12.0",
+    "redis": "^6.0.0",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "supertest": "^7.2.2",
+    "vitest": "^4.1.8"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
